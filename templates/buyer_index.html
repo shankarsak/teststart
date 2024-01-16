@@ -1,0 +1,20 @@
+{% extends "nav.html" %}
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buyer Page</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+{% block content %}
+<main>
+  <h1>User Details</h1>
+  <div class="user-info">
+    <h2>Profile</h2>
+    <p>Username: {{ user.username }}</p>
+    <p>Role: {{ user.role }}</p>
+  </div>
+</main>
+</body>
+{% endblock %}

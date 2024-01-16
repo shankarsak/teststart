@@ -1,0 +1,12 @@
+{% extends 'nav.html' %}
+
+{% block content %}
+<h2>Complete Your Profile</h2>
+<p>Please provide the following information to complete your profile.</p>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Complete Profile</button>
+</form>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'nav.html' %}
+{% load static %}
+{% block content %}
+<title>Grain for Sale</title>
+<link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+<main>
+  <h1>Grain for Sale</h1>
+  <div class="item-list">
+    <ul class="product_list">     
+      {% for product in products %}
+        <li>
+            <h2 class="product_name">{{ product.name }}</h2>
+            <img class="product_img"src="{{ product.image.url }}" alt="{{ product.name }}">
+            <p>Price: {{ product.price }}</p>
+            <p>Quality: {{ product.quality }}</p>
+            <p>Amount: {{ product.amount }}</p>
+            <p>Seller Name:{{ product.seller_name }}</p>
+            <p>Seller Contact:{{ product.seller_contact }}</p>
+            <p>Seller Address:{{ product.seller_address }}</p>
+            <a href="{% url 'show_product_details' product.id %}">View Details</a>
+            {% if not user.is_authenticated %}
+  <p>Not logged in</p>
+{% endif %}
+            <!-- a href="url 'show_seller_details' product.seller.id View Seller Details</a>--> 
+          </li>
+        {% endfor %}
+    </ul>
+    </div>
+</main>
+{% endblock %}
+</body>
+</html>

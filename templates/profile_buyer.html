@@ -1,0 +1,19 @@
+{% extends 'nav.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <title>Profile</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <br/><br/>
+    <h2>Profile</h2>
+    <div class="box">
+        <p>Username: {{ user.username }}</p>
+        <p>Role: {{ user.role }}</p>
+        <p>Name: {{user.first_name}}  {{user.last_name}}</p>
+        <p>Address:  {{user.address1}} {{user.address2}}</p>
+        <p>Contact No.: {{ user.contact_number }}</p>
+        <p>Farm Name: {{ user.farm_name }}</p>
+        <a href="/edit_profile_buyer/"><button class="btn" name="Edit">Edit</a>   
+    </div>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'nav.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Page</title>
+    <link rel="stylesheet" href="../static/css/krishi.css">
+</head>
+<body>
+<main class="box">
+  <h1>Add Product</h1>
+  <!--form id="add-product-form">
+    <label for="product-name">Product Name:</label>
+    <input type="text" id="product-name" required>
+
+    <label for="product-description">Description:</label>
+    <textarea id="product-description"></textarea>
+
+    <button type="submit">Add Product</button>
+  </form-->
+  <button><a href="/add_product/">Add Product</a></button>
+
+  <h2>Your Products</h2>
+  <div id="product-list">
+    <h1>Your Products</h1>
+    <ul>
+        {% for product in products %}
+            <li>
+                Name - {{ product.name }} 
+                Price - {{ product.price }} 
+                Amount -{{ product.amount}}
+                <a href="{% url 'edit_product' product.id %}">Edit</a>
+                <a href="{% url 'delete_product' product.id %}">Delete</a>  </li>
+            </li>
+        {% endfor %}
+    </ul>
+  </div>
+</main>
+</body>
+{% endblock %}

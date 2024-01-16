@@ -1,0 +1,46 @@
+form {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-weight: bolder;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+h1{
+    text-align: center;
+    color: green;
+}
+input[type="text"],
+input[type="number"],
+select {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: maroon;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+  /* Form styling */
+  form {
+    margin-top: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  

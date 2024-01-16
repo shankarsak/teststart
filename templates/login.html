@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/login.css">"
+    <link rel="stylesheet" href="http://127.0.0.1:8000/static/css/login.css">
+    <title>Login</title>
+</head>
+<body>
+  <h2>Login</h2>
+  <form method="POST">
+    {% csrf_token %}
+    {{ login_form.as_p }}
+    <button class="btn btn-primary" type="submit">Login</button>
+  </form>
+  <div class="other_opt">
+    New User <a href="{% url 'register' %}">Register</a> here
+  </div>
+</body>
+</html>

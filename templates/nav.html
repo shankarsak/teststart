@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+</head>
+<body>
+<nav>
+  <div class="logo">
+    <img class="logo" src="{% static "css/img/logo.png" %}" alt="Logo">
+  </div>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/product/">Products</a></li>
+    <li><a href="/about/">About</a></li>
+    <div class="user-details">
+      {% if user.is_authenticated %}
+      <li><a href="{% url 'profile' %}"><img src="../static/img/icons8-name-48.png" alt="Profile"></a></li> 
+      <li><a href="{% url 'logout' %}"><img src="../static/img/icons8-logout-48.png" alt="Logout"></a></li>
+      {% else %}
+      <li><a href="{% url 'login' %}"><img src="../static/img/icons8-enter-48.png" alt="Login"></a></li>
+      {% endif %}
+    </div>
+  </ul>
+</nav>
+{% block content %}
+
+{% endblock %}
+</body>
+</html>
